@@ -14,7 +14,7 @@ alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an %ar
 alias gp='git push'
 alias gu='git pull'
 alias gs='git status --short'
-alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
+alias gd='git diff --output-indicator-new=" " --output-indicator-old=" " --word-diff=color'
 
 # Aliases: ls
 alias l='eza -1A --group-directories-first --color=always --git-ignore'
