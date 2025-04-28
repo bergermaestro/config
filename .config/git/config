@@ -1,0 +1,29 @@
+[user]
+        name = Matthew Berger
+        email = bergermaestro@gmail.com
+
+[core]
+        editor = vim
+[push]
+        autoSetupRemote = true
+        default = current
+[init]
+        defaultBranch = dev
+[branch]
+        autoSetupMerge = simple
+[pull]
+        rebase = true
+
+[credential]
+        helper = store
+
+
+[credential "https://gccode.ssc-spc.gc.ca"]
+        username = matthew.berger@ised-isde.gc.ca
+        helper = store
+[http]
+        sslVerify = false
+
+
+[url "https://gccode.ssc-spc.gc.ca/ised-aix/"]
+        insteadOf = "aix:"
