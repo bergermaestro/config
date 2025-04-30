@@ -1,0 +1,23 @@
+# Aliases: apps
+alias vim='nvim'
+alias psql='pgcli'
+
+# Aliases: Git
+alias ga='git add'
+alias gb='git branch'
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an %ar%C(blue) %D%n%s%n"'
+alias gp='git push'
+alias gu='git pull'
+alias gs='git status --short'
+alias gd='git diff --output-indicator-new=" " --output-indicator-old=" " --word-diff=color'
+alias gad='git add .'
+alias gcm='git commit -am'
+
+# Aliases: ls
+alias l='eza -1A --group-directories-first --color=always --git-ignore'
+alias ls='l'
+alias la='l -l --time-style="+%Y-%m-%d %H:%M" --no-permissions --octal-permissions'
+alias tree='l --tree'
+
+# Aliases: Misc
+alias py='python3'
