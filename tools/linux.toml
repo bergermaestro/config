@@ -1,0 +1,109 @@
+# Linux-specific tool installations
+
+[package_managers]
+# Different Linux distributions use different package managers
+apt = { check_command = "which apt", update_command = "sudo apt update" }
+pacman = { check_command = "which pacman", update_command = "sudo pacman -Sy" }
+dnf = { check_command = "which dnf", update_command = "sudo dnf check-update" }
+yum = { check_command = "which yum", update_command = "sudo yum check-update" }
+
+[packages]
+# Package names for different package managers
+[packages.essential]
+apt = [
+    "git",
+    "curl",
+    "wget",
+    "tmux", 
+    "zsh",
+    "neovim",
+    "htop",
+    "tree",
+    "jq",
+    "ripgrep",
+    "fd-find",  # fd is fd-find on Ubuntu
+    "bat",
+    "eza",
+]
+pacman = [
+    "git",
+    "curl", 
+    "wget",
+    "tmux",
+    "zsh",
+    "neovim",
+    "htop",
+    "tree",
+    "jq",
+    "ripgrep",
+    "fd",
+    "bat",
+    "eza",
+]
+dnf = [
+    "git",
+    "curl",
+    "wget", 
+    "tmux",
+    "zsh",
+    "neovim",
+    "htop",
+    "tree",
+    "jq",
+    "ripgrep",
+    "fd-find",
+    "bat",
+    "eza",
+]
+
+[packages.development]
+apt = [
+    "python3",
+    "python3-pip",
+    "nodejs",
+    "npm",
+    "docker.io",
+    "docker-compose",
+]
+pacman = [
+    "python",
+    "python-pip", 
+    "nodejs",
+    "npm",
+    "docker",
+    "docker-compose",
+]
+dnf = [
+    "python3",
+    "python3-pip",
+    "nodejs",
+    "npm", 
+    "docker",
+    "docker-compose",
+]
+
+[packages.optional]
+apt = [
+    "fzf",
+    "zoxide",
+    "starship",
+    "lazygit",
+    "bottom",
+    "procs",
+]
+pacman = [
+    "fzf",
+    "zoxide", 
+    "starship",
+    "lazygit",
+    "bottom",
+    "procs",
+]
+dnf = [
+    "fzf",
+    "zoxide",
+    "starship", 
+    "lazygit",
+    "bottom",
+    "procs",
+] 

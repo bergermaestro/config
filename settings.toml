@@ -1,0 +1,31 @@
+# Settings for template substitution in config files
+# These variables can be used in templated config files using $variable syntax
+
+[user]
+name = "Your Name"
+email = "your.email@example.com"
+
+[colors]
+# Color scheme variables for consistent theming
+primary = "#007acc"
+secondary = "#ff6b6b"
+background = "#1e1e1e"
+foreground = "#d4d4d4"
+accent = "#ffd700"
+
+[fonts]
+# Font configuration
+mono = "FiraCode Nerd Font"
+sans = "Inter"
+size = "12"
+
+[paths]
+# Common paths (home and repo are automatically added by the script)
+downloads = "$home/Downloads"
+documents = "$home/Documents"
+projects = "$home/Projects"
+
+[terminal]
+# Terminal-specific settings
+opacity = "0.95"
+blur = "true" 

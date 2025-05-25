@@ -13,10 +13,14 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use { "catppuccin/nvim", as = "catppuccin", config = function() vim.cmd('colorscheme catppuccin-latte') end }
+	use { "catppuccin/nvim", as = "catppuccin", config = function() vim.cmd('colorscheme catppuccin-frappe') end }
 
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use ('theprimeagen/harpoon')
+	use {
+		'ThePrimeagen/harpoon',
+		branch = 'harpoon2',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 	use ('mbbill/undotree')
 	use ('tpope/vim-fugitive')
 

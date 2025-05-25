@@ -1,7 +1,6 @@
-
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -20,6 +19,12 @@ if [ -n "$force_color_prompt" ]; then
         color_prompt=
     fi
 fi
+
+# Initialize Zoxide
+eval "$(zoxide init zsh)"
+
+# Initialize Starship prompt
+eval "$(starship init zsh)"
 
 # Alias definitions
 if [ -f ~/.zsh_aliases ]; then

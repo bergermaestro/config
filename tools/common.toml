@@ -1,0 +1,45 @@
+# Common tools that should be available on all platforms
+# These are tools that have the same name across package managers
+
+[essential]
+description = "Essential tools for basic functionality"
+tools = [
+    "git",
+    "curl",
+    "wget",
+    "tmux",
+    "zsh",
+    "neovim",
+    "htop",
+    "tree",
+    "jq",
+    "ripgrep",
+    "fd",
+    "bat",
+    "eza",
+]
+
+[development]
+description = "Development tools and languages"
+tools = [
+    "python3",
+    "nodejs",
+    "npm",
+    "rust",
+    "go",
+    "docker",
+    "docker-compose",
+]
+
+[optional]
+description = "Nice-to-have tools"
+tools = [
+    "fzf",
+    "zoxide",
+    "starship",
+    "lazygit",
+    "bottom",
+    "dust",
+    "procs",
+    "bandwhich",
+] 

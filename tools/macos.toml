@@ -1,0 +1,63 @@
+# macOS-specific tool installations via Homebrew
+
+[package_manager]
+name = "homebrew"
+install_command = '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+check_command = "which brew"
+
+[packages]
+# Homebrew formula names (may differ from common names)
+essential = [
+    "git",
+    "curl",
+    "wget", 
+    "tmux",
+    "zsh",
+    "neovim",
+    "htop",
+    "tree",
+    "jq",
+    "ripgrep",
+    "fd",
+    "bat",
+    "eza",
+]
+
+development = [
+    "python@3.12",
+    "node",
+    "npm",
+    "docker",
+    "docker-compose",
+]
+
+optional = [
+    "fzf",
+    "zoxide",
+    "starship",
+    "lazygit",
+    "bottom",
+    "procs",
+    "bandwhich",
+]
+
+[casks]
+# GUI applications via Homebrew Cask
+essential = [
+    "font-fira-code-nerd-font",
+    "font-jetbrains-mono-nerd-font",
+]
+
+development = [
+    "cursor",
+    "docker",
+    "iterm2",
+]
+
+optional = [
+    "rectangle",
+    "notion",
+    "figma",
+    "hiddenbar",
+    "espanso"
+] 
