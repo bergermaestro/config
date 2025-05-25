@@ -58,7 +58,7 @@ def get_config_files() -> list[Config]:
     ]
 
     # Add platform-specific configs
-    if platform.os_name == "linux" and not platform.is_termux:
+    if platform.os_name == "linux":
         config_files.extend(
             [
                 # SSH (Linux only, macOS handles this differently)
@@ -72,22 +72,6 @@ def get_config_files() -> list[Config]:
                 Config.home(".config/curlrc", "curl/curlrc"),
                 # Postgres
                 Config.home(".psqlrc", "postgres/psqlrc"),
-            ]
-        )
-
-    # Termux-specific files
-    if platform.is_termux:
-        config_files.extend(
-            [
-                Config.home(
-                    ".termux/termux.properties",
-                    "termux/termux.properties",
-                ),
-                Config.home(
-                    ".termux/colors.properties",
-                    "termux/colors.properties",
-                    templated=True,
-                ),
             ]
         )
 

@@ -122,7 +122,7 @@ Nice-to-have tools:
 
 - **Package Managers**: apt, pacman, dnf, yum (auto-detected)
 - **Distributions**: Ubuntu, Debian, Arch, Fedora, CentOS
-- **Special Environments**: WSL, Termux
+- **Special Environments**: WSL
 
 ## Commands
 

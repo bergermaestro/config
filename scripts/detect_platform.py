@@ -16,7 +16,6 @@ class Platform:
     os_name: str  # 'macos', 'linux', 'windows'
     distro: Optional[str] = None  # Linux distribution name
     package_manager: Optional[str] = None  # Available package manager
-    is_termux: bool = False
     is_wsl: bool = False
 
 
@@ -30,8 +29,7 @@ def detect_platform() -> Platform:
         )
 
     elif system == "linux":
-        # Check for special environments
-        is_termux = "com.termux" in os.environ.get("PREFIX", "")
+        # Check for WSL environment
         is_wsl = "microsoft" in platform.uname().release.lower()
 
         # Detect Linux distribution
@@ -44,7 +42,6 @@ def detect_platform() -> Platform:
             os_name="linux",
             distro=distro,
             package_manager=package_manager,
-            is_termux=is_termux,
             is_wsl=is_wsl,
         )
 
@@ -117,9 +114,7 @@ def print_platform_info() -> None:
     else:
         print("Package Manager: None detected")
 
-    if platform_info.is_termux:
-        print("Environment: Termux")
-    elif platform_info.is_wsl:
+    if platform_info.is_wsl:
         print("Environment: WSL")
 
 
