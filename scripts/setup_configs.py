@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Config file setup script for dotfiles management."""
 
-import os
 import shutil
 import sys
 import tomllib
@@ -73,119 +72,6 @@ def get_config_files() -> list[Config]:
                 Config.home(".config/curlrc", "curl/curlrc"),
                 # Postgres
                 Config.home(".psqlrc", "postgres/psqlrc"),
-                # Gnupg
-                Config.home(".gnupg/gpg.conf", "gnupg/gpg.conf"),
-                Config.home(".gnupg/gpg-agent.conf", "gnupg/gpg-agent.conf"),
-                # Helix
-                Config.home(".config/helix/config.toml", "helix/config.toml"),
-                Config.home(
-                    ".config/helix/languages.toml",
-                    "helix/languages.toml",
-                    templated=True,
-                ),
-                Config.home(".config/helix/ignore", "helix/ignore"),
-                Config.home(
-                    ".config/helix/themes/cj.toml",
-                    "helix/theme.toml",
-                    templated=True,
-                ),
-                # Ruff
-                Config.home(".config/ruff/ruff.toml", "ruff/ruff.toml"),
-                # Cspell
-                Config.home(".cspell.yml", "cspell/cspell.yml"),
-                Config.home(".local/cspell-cj.txt", "cspell/dict-cj.txt"),
-                # Paru (Arch Linux)
-                Config.home(".config/paru/paru.conf", "paru/paru.conf"),
-                # Hyprland
-                Config.home(
-                    ".config/hypr/hyprland.conf",
-                    "hypr/hyprland.conf",
-                    templated=True,
-                ),
-                Config.home(
-                    ".config/hypr/hyprlock.conf",
-                    "hypr/hyprlock.conf",
-                    templated=True,
-                ),
-                Config.home(".config/hypr/hypridle.conf", "hypr/hypridle.conf"),
-                # Waybar
-                Config.home(
-                    ".config/waybar/config",
-                    "waybar/config",
-                    templated=True,
-                ),
-                Config.home(
-                    ".config/waybar/style.css",
-                    "waybar/style.css",
-                    templated=True,
-                ),
-                # Foot
-                Config.home(
-                    ".config/foot/foot.ini",
-                    "foot/foot.ini",
-                    templated=True,
-                ),
-                # Mako
-                Config.home(
-                    ".config/mako/config",
-                    "mako/config",
-                    templated=True,
-                ),
-                # Wofi
-                Config.home(".config/wofi/config", "wofi/config"),
-                Config.home(
-                    ".config/wofi/style.css",
-                    "wofi/style.css",
-                    templated=True,
-                ),
-                # Fontconfig
-                Config.home(".config/fontconfig/fonts.conf", "fontconfig/fonts.conf"),
-                # Electron
-                Config.home(
-                    ".config/electron29-flags.conf",
-                    "electron/electron-flags.conf",
-                ),
-                Config.home(
-                    ".config/electron30-flags.conf",
-                    "electron/electron-flags.conf",
-                ),
-                # XDG
-                Config.home(".config/user-dirs.dirs", "xdg/user-dirs.dirs"),
-                # IPython
-                Config.home(
-                    ".ipython/profile_default/ipython_config.py",
-                    "ipython/ipython_config.py",
-                ),
-                # Matplotlib
-                Config.home(
-                    ".config/matplotlib/matplotlibrc",
-                    "matplotlib/matplotlibrc",
-                ),
-                # XCompose
-                Config.home(".XCompose", "x11/xcompose"),
-                # Zathura
-                Config.home(
-                    ".config/zathura/zathurarc",
-                    "zathura/zathurarc",
-                    templated=True,
-                ),
-                # Aria2
-                Config.home(".config/aria2/aria2.conf", "aria2/aria2.conf"),
-                # Mpv
-                Config.home(".config/mpv/mpv.conf", "mpv/mpv.conf"),
-                Config.home(".config/mpv/input.conf", "mpv/input.conf"),
-                # Cargo
-                Config.home(".cargo/config.toml", "cargo/config.toml"),
-                # Numbat
-                Config.home(".config/numbat/config.toml", "numbat/config.toml"),
-                # Poetry
-                Config.home(".config/pypoetry/config.toml", "pypoetry/config.toml"),
-                # Ledger
-                Config.home(".ledgerrc", "ledger/ledgerrc"),
-                # Zed
-                Config.home(".config/zed/settings.json", "zed/settings.json"),
-                Config.home(".config/zed/keymap.json", "zed/keymap.json"),
-                Config.home(".config/zed/themes/Casablanca.json", "zed/theme.json"),
             ]
         )
 
