@@ -53,7 +53,7 @@ def get_config_files() -> list[Config]:
         # Git
         Config.home(".config/git/config", "git/config"),
         # Starship
-        Config.home(".config/starship.toml", "starship/starship.toml"),
+        Config.home(".config/starship/starship.toml", "starship/starship.toml"),
         # Neovim - copy entire directory structure
         Config.home(".config/nvim", "nvim", is_directory=True),
     ]

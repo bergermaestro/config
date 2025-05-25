@@ -2,6 +2,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """$directory$character"""
+palette = "catppuccin_mocha"
+# move the rest of the prompt to the right
+right_format = """$all"""
+
 # Inserts a blank line between shell prompts
 add_newline = true
 
@@ -11,19 +16,18 @@ success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
 
 # Configure the format of the prompt
-format = """
-[┌─](bold blue)$username$hostname$directory$git_branch$git_status$python$nodejs$rust$golang$docker_context
-[└─](bold blue)$character"""
+format = "$username$hostname$directory$git_branch$python$nodejs$rust$golang$docker_context$character"
 
 [username]
 style_user = "bold yellow"
 style_root = "bold red"
 format = "[$user]($style) "
 disabled = false
-show_always = true
+show_always = false
 
 [hostname]
-ssh_only = false
+ssh_symbol = " "
+ssh_only = true
 format = "[@$hostname](bold cyan) "
 disabled = false
 
@@ -32,10 +36,11 @@ truncation_length = 3
 truncation_symbol = "…/"
 format = "[$path]($style)[$read_only]($read_only_style) "
 style = "bold purple"
+read_only = " 󰌾"
 
 [git_branch]
-symbol = " "
-format = "on [$symbol$branch]($style) "
+symbol = " "
+format = "[$symbol$branch]($style) "
 style = "bold green"
 
 [git_status]
@@ -54,40 +59,235 @@ renamed = "»"
 deleted = "✘"
 
 [python]
-symbol = " "
-format = 'via [$symbol$pyenv_prefix($version)]($style) '
+symbol = " "
+format = ' [$symbol$pyenv_prefix($version)]($style) '
 style = "bold yellow"
 
 [nodejs]
-symbol = " "
-format = 'via [$symbol($version)]($style) '
+symbol = " "
+format = ' [$symbol($version)]($style) '
 style = "bold green"
 
 [rust]
-symbol = " "
-format = 'via [$symbol($version)]($style) '
+symbol = "󱘗 "
+format = ' [$symbol($version)]($style) '
 style = "bold red"
 
 [golang]
-symbol = " "
-format = 'via [$symbol($version)]($style) '
+symbol = " "
+format = ' [$symbol($version)]($style) '
 style = "bold cyan"
 
 [docker_context]
-symbol = " "
-format = 'via [$symbol$context]($style) '
+symbol = " "
+format = ' [$symbol$context]($style) '
 style = "bold blue"
 
 [time]
-disabled = false
+disabled = true
 format = '🕙[\[ $time \]]($style) '
 time_format = "%T"
 style = "bold white"
 
 # Disable some modules that might be too verbose
 [package]
+symbol = "󰏗 "
 disabled = true
 
 [cmd_duration]
 min_time = 2_000
-format = "took [$duration](bold yellow) " 
+format = "took [$duration](bold yellow) "
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+[git_commit]
+tag_symbol = '  '
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
