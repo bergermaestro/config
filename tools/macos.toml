@@ -60,5 +60,9 @@ optional = [
     "notion",
     "figma",
     "hiddenbar",
-    "espanso"
+    "espanso",
+    "spotify",
+    "microsoft-edge",
+    "arc",
+    
 ] 
